@@ -14,15 +14,56 @@ header {
     padding: 10px 0;
 }
 
-#map {
-    width: 100%;
-    height: 500px; /* 기본 지도 높이 */
+.container {
+    display: flex;
+    height: 100%;
 }
 
-/* 화면 크기에 따라 지도 크기 조정 (반응형 디자인) */
+/* 데스크탑용 레이아웃: 리스트는 왼쪽, 지도는 오른쪽 */
+#list {
+    width: 30%;
+    background-color: #f9f9f9;
+    padding: 10px;
+    overflow-y: auto;
+    border-right: 1px solid #ddd;
+}
+
+#list ul {
+    list-style: none;
+    padding: 0;
+}
+
+#list ul li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+}
+
+#list ul li:hover {
+    background-color: #f0f0f0;
+}
+
+#map {
+    flex-grow: 1;
+    height: 100vh;
+}
+
+/* 반응형: 모바일 레이아웃에서는 지도가 상단, 리스트가 하단 */
 @media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column; /* 상하로 배치되도록 변경 */
+    }
+
     #map {
-        height: 300px; /* 모바일에서는 지도 높이를 줄임 */
+        width: 100%;
+        height: 50vh; /* 화면의 절반을 차지 */
+    }
+
+    #list {
+        width: 100%;
+        height: 50vh; /* 화면의 하단 절반을 차지 */
+        border-right: none; /* 모바일에서는 우측에 경계선 없음 */
+        border-top: 1px solid #ddd; /* 하단에 리스트가 있으므로 상단 경계선 추가 */
     }
 }
 

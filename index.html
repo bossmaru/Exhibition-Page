@@ -3,18 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>전시회 지도</title>
+    <title>서울 전시회 지도</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>한국 전시회 정보</h1>
+        <h1>서울 전시회 및 관광지</h1>
     </header>
-    
-    <section id="map"></section> <!-- 지도가 표시될 공간 -->
+
+    <div class="container">
+        <div id="list">
+            <ul id="exhibitionList">
+                <!-- 전시 정보가 이곳에 추가됩니다 -->
+            </ul>
+        </div>
+
+        <div id="map"></div> <!-- 지도가 표시될 공간 -->
+    </div>
 
     <footer>
-        <p>&copy; 2024 전시회 정보 모아보기</p>
+        <p>&copy; 2024 서울 전시회 및 관광지 정보</p>
     </footer>
 
     <!-- Kakao Maps API 스크립트 -->
